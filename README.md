@@ -52,8 +52,8 @@ Data_set = numpy.loadtxt("dataset/ThoraricSurgery.csv", delimiter=",")
 Data_set이라는 임시 저장소 만들고, 넘파이 라이브러리 안에 있는 loadtxt( )라는 함수 사용 →외부 데이터셋 불러옴
 
 - delimiter : ,로 구분해서 가져옴
+![image](https://user-images.githubusercontent.com/71601986/126145573-02323636-6b11-4aed-aa9c-b9a046ebb122.png)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/da785318-b2d7-48da-8bf1-dacba1d8b6c4/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/da785318-b2d7-48da-8bf1-dacba1d8b6c4/Untitled.png)
 
 - 470명의 정보 각 라인은 18개 항목으로 구분 (환자 상태 정보임)
 - 18번째 정보는 수술 후 생존 결과 (1:생존, 2:사망)
