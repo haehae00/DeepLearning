@@ -1,6 +1,8 @@
 # DeepLearning
 
-## [데이터 분석과 입력]
+#Cancer Patient
+
+### [데이터 분석과 입력]
 
 ```python
 from tensorflow.keras.models import Sequential 
@@ -68,7 +70,7 @@ Y = Data_set[:,17]
 
 17번째까지 속성(X) 18번째 클래스(Y)
 
-## [딥러닝 실행]
+### [딥러닝 실행]
 
 ```python
 #딥러닝 구조를 결정(모델을 설정하고 실행하는 부분)
@@ -80,3 +82,71 @@ model.add(Dense(1, activation='sigmoid'))
 model.add()를 사용해서 두 개의 층을 쌓아올림
 
 Dense : '조밀하게 모여있는 집합'
+
+### [딥러닝 실행]
+
+```python
+#딥러닝 구조를 결정(모델을 설정하고 실행하는 부분)
+model = Sequential()
+model.add(Dense(30, input_dim=17, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+```
+
+model.add()를 사용해서 두 개의 층을 쌓아올림
+
+Dense : '조밀하게 모여있는 집합' 
+
+각 층이 제각각 어떤 **특성**을 가질 지 **옵션을 설정**하는 역할
+
+```python
+model.compile(loss='mean_squared_error', optimizer='adam',metrics=['accuracy'])
+model.fit(X, Y, epochs=30, batch_size=10)
+```
+
+compile( ) 함수를 이용해 실행시킴
+
+- loss, optimizer, activation
+
+### [결과 출력]
+
+```python
+print("\n Accuracy: %.4f" % (model.evaluate(X, Y)[1]))
+```
+
+model.evaluate( ) 함수를 이용해 앞서 만든 딥러닝 모델이 어느 정도 정확히 예측하는지 점검
+
+해당 예시에서 정확도 → 학습 대상인 기존 환자들의 데이터 중 일부를 랜덤 추출하여 새 환자처럼 가정하고 테스트하여 나온 결과
+
+⇒ 신뢰할 수 있는 정확도를 위해선 테스트 셋을 미리 정하여 떼어낸 뒤 따로 저장하여 오직 이 테스트셋만으로 테스트
+
+## [전체 코드]
+
+```python
+from tensorflow.keras.models import Sequential 
+from tensorflow.keras.layers import Dense
+
+import numpy
+import tensorflow as tf
+
+seed = 0
+numpy.random.seed(seed)
+tf.random.set_seed(seed)
+
+Data_set = numpy.loadtxt("dataset/ThoraricSurgery.csv", delimiter=",")
+
+X = Data_set[:,0:17]
+Y = Data_set[:,17]
+
+model = Sequential()
+model.add(Dense(30, input_dim=17, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(loss='mean_squared_error', optimizer='adam',metrics=['accuracy'])
+model.fit(X, Y, epochs=30, batch_size=10)
+
+print("\n Accuracy: %.4f" % (model.evaluate(X, Y)[1]))
+```
+
+### [결과]
+
+![image](https://user-images.githubusercontent.com/71601986/126146057-6e531778-d19f-4335-8e60-c10abc388a07.png)
