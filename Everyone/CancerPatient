@@ -6,7 +6,7 @@ import tensorflow as tf
 
 seed = 0
 numpy.random.seed(seed)
-tf.random.set_seed(seed)
+#tf.random.set_seed(seed)
 
 Data_set = numpy.loadtxt("dataset/ThoraricSurgery.csv", delimiter=",")
 
