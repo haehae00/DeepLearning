@@ -20,3 +20,5 @@
 난 오늘 무엇을 했는가
 
 Deauth packet programing
+
+공부공부 딥러닝 공부 mnist 손글씨
