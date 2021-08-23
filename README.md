@@ -23,5 +23,4 @@ Deauth packet programing
 
 공부공부 딥러닝 공부 mnist 손글씨
 
-모두의 딥러닝 끄
-testee
+모두의 딥러닝 
