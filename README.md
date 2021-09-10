@@ -16,3 +16,5 @@ sddss
 
 
 자연어 
+
+Rnn cnn 차이점
