@@ -19,3 +19,5 @@ sddss
 
 Rnn cnn 차이점
 존나졸려ㅕㅕㅕㅕ
+
+Android....tq
