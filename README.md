@@ -22,5 +22,3 @@ Rnn cnn 차이점
 
 Android....tq
 
-
-집가는중....시발 
